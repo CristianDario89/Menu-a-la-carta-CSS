@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+     *font-family: 'Roboto', sans-serif;
+}
+
+body{
+   background: #499bea;
+background: -moz-linear-gradient(left, #499bea 0%, #78ade6 88%, #78ade6 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, #499bea), color-stop(88%, #78ade6), color-stop(100%, #78ade6));
+background: -webkit-linear-gradient(left, #499bea 0%, #78ade6 88%, #78ade6 100%);
+background: -o-linear-gradient(left, #499bea 0%, #78ade6 88%, #78ade6 100%);
+background: -ms-linear-gradient(left, #499bea 0%, #78ade6 88%, #78ade6 100%);
+background: linear-gradient(to right, #499bea 0%, #78ade6 88%, #78ade6 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#78ade6', GradientType=1 ); 
+}
+
+.contenedor-menu{
+    width: 1000px;
+    height: 680px;
+       
+    display: flex;
+    
+    margin: auto;
+    margin-top: 50px;
+    
+    perspective: 1500px;
+}
+
+.pagina-izquierda,
+.pagina-central,
+.pagina-derecha{
+    padding: 10px;
+    width: 100%
+        height:100%;
+    background: white;
+    
+}
+
+.pagina-izquierda{
+   background: #ffffff;
+background: -moz-linear-gradient(left, #ffffff 0%, #f5f5f5 22%, #ededed 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(22%, #f5f5f5), color-stop(100%, #ededed));
+background: -webkit-linear-gradient(left, #ffffff 0%, #f5f5f5 22%, #ededed 100%);
+background: -o-linear-gradient(left, #ffffff 0%, #f5f5f5 22%, #ededed 100%);
+background: -ms-linear-gradient(left, #ffffff 0%, #f5f5f5 22%, #ededed 100%);
+background: linear-gradient(to right, #ffffff 0%, #f5f5f5 22%, #ededed 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+}
+.pagina-central{
+    background: #ffffff;
+background: -moz-linear-gradient(left, #ffffff 0%, #f5f5f5 33%, #ededed 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(33%, #f5f5f5), color-stop(100%, #ededed));
+background: -webkit-linear-gradient(left, #ffffff 0%, #f5f5f5 33%, #ededed 100%);
+background: -o-linear-gradient(left, #ffffff 0%, #f5f5f5 33%, #ededed 100%);
+background: -ms-linear-gradient(left, #ffffff 0%, #f5f5f5 33%, #ededed 100%);
+background: linear-gradient(to right, #ffffff 0%, #f5f5f5 33%, #ededed 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+}
+ 
+.contenedor-lista{
+ /*   position: absolute;*/
+    width: 100%;
+    height: 100%;
+}
+
+.lista-uno,
+.lista-dos,
+.lista-tres{
+    width: 100%; 
+}
+.lista-uno h1,
+.lista-dos h1,
+.lista-tres h1{
+    font-size: 24px;
+    text-align: center;
+}
+.lista-uno img,
+.lista-dos img,
+.lista-tres img{
+    width: 100%; 
+   height: 80px;
+}
+.lista-uno p,
+.lista-dos p,
+.lista-tres p{
+ font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    
+}
+.lista-uno hr,
+.lista-dos hr,
+.lista-tres hr{
+ width: 100px;
+    height: 3px;
+    margin: auto;
+    border-style: none;
+    background: -webkit-linear-gradient(left, red, blue, aqua);
+    margin-top: 10px;
+}
+
+
+/**plicandooo fectos de movimiento*/
+.pagina-izquierda{
+    transform: rotateY(180deg);
+    transition: all 1s;
+    /*doblado pa la derecha*/
+    transform-origin: right;  /*pos original*/
+    transform-style:  preserve-3d;
+    z-index: 10; /*pa q se posicione hacia arriba el contenido *necesario*/
+}
+.pagina-izquierda2{
+    transform: rotateY(0deg);
+     
+}
+
+
+.lado{
+    /*debido a la clase de abajo se hace esto*/
+    backface-visibility: hidden; /**los elem d la parte de atras seran ocultos*/
+}
+
+.delante{
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    text-align: center;  /*centra todos ylas IMG*/
+    position: absolute;
+    
+}
+
+
+
+.delante img{
+    width:  260px;
+    height: 240px;
+ margin: auto;
+    margin-top: 24px;
+    
+}
+.delante h1{
+    font-size: 24px;
+    text-align: center;
+     margin-top: 14px;
+}
+
+.delante hr {
+    width: 200px;
+    height: 3px;
+    border-style: none;
+  
+    margin: auto;
+    background: -webkit-linear-gradient(left, yellow, black, red);
+      margin-top: 10px;
+}
+
+.delante h3{
+    font-weight: 100; /*pa q sea la letra mas fina q la d arriba*/
+    margin-top: 20px;
+}
+
+.delante button {
+    width: 200px;
+    padding: 6px;
+    background: orange;
+    border-bottom-style: none;
+    border-radius:  8px;
+    color: white;
+    margin-top: 10px;
+    transition: all 300ms;  /*esto va de la mano con el transform del hover*/
+    cursor: pointer;
+}
+
+.delante button:hover{
+   transform: translateY(10px);
+    box-shadow:  0px -5px 10px 0px grey; /*-5 pa q se valla la sombra pa arriba*/
+}
+
+.delante h4{
+    margin-top: 10px;
+}
+
+.delante p{
+    margin-top: 10px;
+}
+
+.delante ul{
+    display: flex;  /*su contenido e ponga uno al lado del otro*/
+    justify-content: center; /*pa q se cntenido se centre*/
+     margin-top: 10px;
+}
+
+.delante ul h5{
+    font-size: 16px;
+}
+
+.delante ul label{
+     font-size: 14x;
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+
+/*pagina derecha animacion*/
+
+.pagina-derecha{
+    transform: rotateY(-180deg);
+    transform-origin: left;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.pagina-derecha2{
+    transform: rotateY(0deg);
+}
+
+.lado-pagina-derecha{
+   backface-visibility: hidden;
+}
+
+.pagina-derecha-atras{
+    /*pa asegurarse q funquen algunas lineas como el border*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+     transform: rotateY(180deg);
+ /*   border: 5px double black;*/
+    border-right: none; /**q este borde no lo  muestre*/
+}
+
+.btn-cerrar{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background: grey;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 3;
+    filter: blur(2px); /**efecto pa q se desengoque*/
+    transition: all 300ms;
+    cursor: pointer;
+}
+.btn-cerrar:hover{
+    filter: blur(0px); /**efecto pa q se desengoque*/
+    
+}
