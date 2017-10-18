@@ -1,2 +1,1 @@
-# drop-down-menu
-Drop-down menu made in HTML with CSS JS
+Deployable menu for Restaurant made with CSS and JS.
